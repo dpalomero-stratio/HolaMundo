@@ -1,4 +1,4 @@
 FROM alpine:latest
 USER root
-RUN apt-get update 
+RUN apk --update add openjdk8-jre 
 ENTRYPOINT ["java","-jar","/Hola_Mundo/src/Prueba/hola.jar"]
