@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Sealed: true
 Main-Class: Prueba.hola
-Class-Path: /var/jenkins_home/workspace/pipe_final/Hola_Mundo/src/Prueba
+
