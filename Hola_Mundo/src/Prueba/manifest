@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Sealed: true
 Main-Class: Prueba.hola
-Class-Path: . 
+Class-Path: Hola_Mundo/src/Prueba
