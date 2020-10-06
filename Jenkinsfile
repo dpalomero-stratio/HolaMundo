@@ -2,7 +2,6 @@ node {
     stage('Download') {
         git 'https://github.com/dpalomero-stratio/HolaMundo.git'
         echo 'llega'
-        }
     }
     stage('Compile') {
         dir("Hola_Mundo/src/Prueba") {
