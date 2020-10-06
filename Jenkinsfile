@@ -17,9 +17,10 @@ node {
         echo 'genera'
     }
     stage('Anchore') {
-        def imageLine = 'docker.io/hello-world'
+        /*def imageLine = 'docker.io/hello-world'
         writeFile file: 'anchore_images', text: imageLine
-        anchore name: 'anchore_images'
+        anchore name: 'anchore_images'*/
+        sh 'docker-compose exec api anchore-cli image add hello-world'
         echo 'prueba anchore'
     }
     /*stage('Ejecute') {
