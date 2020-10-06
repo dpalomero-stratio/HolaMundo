@@ -26,10 +26,12 @@ pipeline {
         }
         stage('Anchore') {
             steps {
-                    def imageLine = 'debian:latest'
+                node {
+                    def imageLine = 'holaj:prueba'
                     writeFile file: 'anchore_images', text: imageLine
                     anchore name: 'anchore_images'
                 }
+            }
                 echo 'prueba anchore'
         }
         stage('Ejecute') {
