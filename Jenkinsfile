@@ -17,7 +17,7 @@ node {
         echo 'genera'
     }
     stage('Anchore') {
-        def imageLine = 'hello-world'
+        def imageLine = 'docker.io/hello-world'
         writeFile file: 'anchore_images', text: imageLine
         anchore name: 'anchore_images'
         echo 'prueba anchore'
