@@ -20,6 +20,7 @@ node {
         def imageLine = 'holaj:prueba'
         writeFile file: 'anchore_images', text: imageLine
         anchore name: 'anchore_images'
+        echo 'prueba anchore'
     }
     stage('Ejecute') {
         dir("Hola_Mundo/src/Prueba") {
