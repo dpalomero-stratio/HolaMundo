@@ -24,16 +24,6 @@ pipeline {
                 echo 'genera'
             }
         }
-        stage('Anchore') {
-            steps {
-                node {
-                    def imageLine = 'holaj:prueba'
-                    writeFile file: 'anchore_images', text: imageLine
-                    anchore name: 'anchore_images'
-                }
-            }
-                echo 'prueba anchore'
-        }
         stage('Ejecute') {
             steps {
                 dir("Hola_Mundo/src/Prueba") {
