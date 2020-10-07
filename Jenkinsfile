@@ -13,7 +13,8 @@ node {
     stage('Generate') {
         dir("Hola_Mundo/src/Prueba") {
             sh 'docker build -t holaj:prueba .'
-            sh 'docker push holaj:prueba'
+            sh 'docker tag holaj:prueba localhost:5000/holaj'
+            sh 'docker push localhost:5000/holaj'
         }
         echo 'genera'
     }
