@@ -13,6 +13,7 @@ node {
     stage('Generate') {
         dir("Hola_Mundo/src/Prueba") {
             sh 'docker build -t holaj:prueba .'
+            sh 'docker push holaj:prueba'
         }
         echo 'genera'
     }
