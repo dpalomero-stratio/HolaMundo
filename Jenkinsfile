@@ -19,7 +19,7 @@ node {
         echo 'genera'
     }
     stage('Anchore') {
-        def imageLine = 'holaj:prueba'
+        def imageLine = 'holaj'
         writeFile file: 'anchore_images', text: imageLine
         anchore name: 'anchore_images'
         echo 'prueba anchore'
