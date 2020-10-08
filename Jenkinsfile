@@ -20,7 +20,7 @@ node {
     }
     stage('Anchore') {
         sh 'docker pull dpalomerostratio/holaj2'
-        def imageLine = 'holaj2'
+        def imageLine = 'dpalomerostratio/holaj2'
         writeFile file: 'anchore_images', text: imageLine
         anchore(name: 'anchore_images', engineRetries:'${util.getTimeout().toInteger() * 60}', forceAnalyze: true)
         echo 'prueba anchore'
