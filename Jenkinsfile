@@ -21,7 +21,7 @@ node {
     stage('Anchore') {
         def imageLine = 'holaj'
         writeFile file: 'anchore_images', text: imageLine
-        anchore name: 'anchore_images'
+        anchore(name: 'anchore_images', engineRetries: "${util.getTimeout().toInteger() * 60}", forceAnalyze: true)
         echo 'prueba anchore'
     }
     /*stage('Ejecute') {
