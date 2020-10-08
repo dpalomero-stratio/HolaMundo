@@ -13,13 +13,13 @@ node {
     stage('Generate') {
         dir("Hola_Mundo/src/Prueba") {
             sh 'docker build -t holaj:prueba .'
-            sh 'docker tag holaj:prueba localhost:5000/holaj'
-            sh 'docker push localhost:5000/holaj'
+            sh 'docker tag holaj:prueba dpalomerostratio/holaj2'
+            sh 'docker push dpalomerostratio/holaj2'
         }
         echo 'genera'
     }
     stage('Anchore') {
-        def imageLine = 'holaj'
+        def imageLine = 'holaj2'
         writeFile file: 'anchore_images', text: imageLine
         anchore(name: 'anchore_images', engineRetries: "${util.getTimeout().toInteger() * 60}", forceAnalyze: true)
         echo 'prueba anchore'
