@@ -19,10 +19,9 @@ node {
         echo 'genera'
     }
     stage('Anchore') {
-        sh 'docker pull dpalomerostratio/holaj2'
-        def imageLine = 'dpalomerostratio/holaj2'
-        writeFile file: 'anchore_images', text: imageLine
-        anchore(name: 'anchore_images', engineRetries:'${util.getTimeout().toInteger() * 60}', forceAnalyze: true)
+        writeFile file: 'anchore_images', text: 'dpalomerostratio/holaj2'
+        echo 'prueba anchore'
+        anchore(name: 'anchore_images', forceAnalyze: true)
         echo 'prueba anchore'
     }
     /*stage('Ejecute') {
