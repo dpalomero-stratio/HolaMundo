@@ -21,7 +21,7 @@ node {
     }
     stage('Ejecute') {
         dir("Hola_Mundo/src/Prueba") {
-            sh 'docker run -d --name "holamundo" holaj:prueba'
+            sh 'docker run -d --name "holamundo" holaj2'
             sh 'docker logs holamundo'
         }
     }
