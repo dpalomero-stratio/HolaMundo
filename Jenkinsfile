@@ -1,5 +1,5 @@
 node {
-    stage('Download') {
+    step('Download') {
         git 'https://github.com/dpalomero-stratio/HolaMundo.git'
         echo 'llega'
     }
