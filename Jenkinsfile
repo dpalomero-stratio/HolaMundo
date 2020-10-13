@@ -1,4 +1,5 @@
 node {
+    steps {
     step('Download') {
         git 'https://github.com/dpalomero-stratio/HolaMundo.git'
         echo 'llega'
@@ -31,4 +32,5 @@ node {
         }
         echo 'ejecuta'
     }*/
+    }
 }
